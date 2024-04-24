@@ -11,19 +11,25 @@ import java.util.Date;
 @Entity
 @Table(name = "products")
 public class Product {
-    @Id //Primary key hence the Id annotation.
+    /**
+     * Primary key identifier for the product.
+     */
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Increments Id automatically with the strategy being IDENTITY.
     private int id;
 
-    private String name;
-    private String brand;
-    private String category;
-    private double price;
+    private String name;// Name of the product.
+    private String brand;// Brand of the product.
+    private String category; // Category of the product.
+    private double price; // Price of the product.
 
+    /**
+     * Description of the product.
+     */
     @Column(columnDefinition = "Text")
     private String description;
-    private Date createdAt;
-    private String imageFileName;
+    private Date createdAt; // Date and time when the product was created.
+    private String imageFileName; // Filename of the product's image.
 
     public int getId() {
         return id;
